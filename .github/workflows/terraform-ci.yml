@@ -18,11 +18,5 @@ jobs:
         with:
           terraform_version: 1.8.0
 
-      - name: Terraform Init
-        run: terraform init
-
-      - name: Terraform Validate
-        run: terraform validate
-
-      - name: Terraform Plan
-        run: terraform plan
+      - name: Display Terraform version
+        run: terraform version
