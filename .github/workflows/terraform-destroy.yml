@@ -1,4 +1,4 @@
-name: Terraform CI
+name: Terraform Destroyer
 
 on:
   # Events/Trigger the workflow
@@ -20,6 +20,9 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.8.0
+
+      - name: Initialize Terraform
+        run: terraform init
 
       - name: Destroy Terraform
         run: terraform destroy -auto-approve
