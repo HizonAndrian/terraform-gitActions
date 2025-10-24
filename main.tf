@@ -5,3 +5,11 @@ resource "aws_s3_bucket" "s3_tester" {
     Name = "pull-requester"
   }
 }
+
+resource "aws_s3_bucket" "s3_pull_request" {
+  bucket = "s3-git-pull-request"
+
+  tags = {
+    Name = "pull-request"
+  }
+}
