@@ -2,7 +2,9 @@ name: Terraform CI
 
 on:
   # Events/Trigger the workflow
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   terraform:
