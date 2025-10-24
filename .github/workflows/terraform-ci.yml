@@ -1,10 +1,13 @@
 name: Terraform CI
 
 on:
+  # Events/Trigger the workflow
   workflow_dispatch:
 
 jobs:
   terraform:
+
+    # The type of runner that the job will run on.
     runs-on: ubuntu-latest
 
     steps:
@@ -16,5 +19,5 @@ jobs:
         with:
           terraform_version: 1.8.0
 
-      - name: Display Terraform version
-        run: terraform version
+      - name: Initialize Terraform
+        run: terraform init
