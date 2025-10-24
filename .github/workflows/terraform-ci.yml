@@ -9,9 +9,8 @@ name: Terraform CI
 on:
   # Events/Trigger the workflow
   pull_request:
-    types: [opened]
-    branches:
-      - main
+    types:
+      - opened
 
 jobs:
   terraform:
