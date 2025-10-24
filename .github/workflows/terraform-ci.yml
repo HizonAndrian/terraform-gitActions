@@ -1,8 +1,15 @@
 name: Terraform CI
 
+# on:
+#   # Events/Trigger the workflow
+#   push:
+#     branches:
+#       - main
+
 on:
   # Events/Trigger the workflow
-  push:
+  pull_request:
+    types: [opened]
     branches:
       - main
 
