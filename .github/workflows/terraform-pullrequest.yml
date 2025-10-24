@@ -4,7 +4,7 @@ on:
   # Events/Trigger the workflow
   pull_request:
     types:
-      - synchronize
+      - closed
 
 jobs:
   terraform:
