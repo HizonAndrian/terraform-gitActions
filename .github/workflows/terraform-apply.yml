@@ -1,0 +1,31 @@
+name: Terraform Apply
+
+on:
+  # Events/Trigger the workflow
+  workflow_dispatch:
+    inputs:
+        confirmation:
+            description: 'Type "apply" to confirm Terraform apply'
+            required: true
+            default: 'no'
+
+jobs:
+  terraform-apply:
+    runs-on: ubuntu-latest
+    env:
+      TF_TOKEN_app_terraform_io: ${{ secrets.TF_API_TOKEN }}
+
+    steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+    
+        - name: Set up Terraform
+          uses: hashicorp/setup-terraform@v3
+          with:
+            terraform_version: 1.8.0
+    
+        - name: Initialize Terraform
+          run: terraform init
+    
+        - name: Apply Terraform Plan
+          run: terraform apply -auto-approve
