@@ -3,6 +3,11 @@ name: Terraform Destroyer
 on:
   # Events/Trigger the workflow
   workflow_dispatch:
+    inputs:
+        confirmation:
+            description: 'Type "destroy" to confirm Terraform destroy'
+            required: true
+            default: 'cancel'
 
 jobs:
   terraform:
