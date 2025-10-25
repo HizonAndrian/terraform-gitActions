@@ -3,6 +3,8 @@ name: Terraform Plan for Pull Requests
 on:
   # Events/Trigger the workflow
   pull_request:
+
+    #Activity Type
     types:
       - closed
 

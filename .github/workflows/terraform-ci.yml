@@ -3,6 +3,7 @@ name: Terraform CI
 on:
   # Events/Trigger the workflow
   push:
+    #Event Filter
     branches:
       - main
 
