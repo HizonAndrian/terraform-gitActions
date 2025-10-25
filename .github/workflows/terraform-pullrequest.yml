@@ -31,7 +31,10 @@ jobs:
         run: terraform validate
 
       - name: Terraform Plan
-        run: terraform plan
+        run: terraform plan -out=planfile.tfplan
 
       - name: Terraform Format Check
         run: terraform fmt -check
+
+      - name: Readable and Annotated Terraform Plan
+        run: terraform show -no-color planfile.tfplan > terraform-plan.txt
